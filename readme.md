@@ -8,3 +8,11 @@
   - Entity를 영속 상태로 바꾸고, Sql을 db로 전달
   - Map으로 관리 Entity의 @id컬럼을 key로 사용
   - 캐시에 없을 때만 DB에서 조회
+
+### JPA는 쿼리를 작성하는 다양한 방법 지원
+- JPQL: DB테이블이 아닌 entity를 대상으로한 쿼리 작성(대소문자 구분함)
+- 쿼리 메서드: 메서드 이름으로 JPQL을 자동 생성
+- Criteria: JPQL을 메서드의 조합으로 작성
+- QueryDSL: JPQL을 메서드의 조합으로 작성(오픈소스)
+- NativeSQL : SQL을 직접 작성 @Query
+
