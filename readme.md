@@ -16,3 +16,8 @@
 - QueryDSL: JPQL을 메서드의 조합으로 작성(오픈소스)
 - NativeSQL : SQL을 직접 작성 @Query
 
+### JPQL
+- DB 테이블이 아닌, entity를 대상으로 쿼리 작성, SQL과 유사
+- 자동생성: 쿼리 메서드(Spring Data), JPA Criteria, Querydsl
+- 수동생성: em.createQuery(), @Query 
+  - TypedQuery로 변환된다. (nativeQuery=true로 조건 필요)
