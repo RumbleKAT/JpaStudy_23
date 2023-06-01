@@ -33,3 +33,11 @@
   - 일부 필드만 조회할 때는 JPAQuery<Tuple>, 하나는 JPAQuery<T>에 타입 지정
   - BooleanBuilder를 이용하면 조건에 따라 쿼리가 달라지게 할수 있다.(동적 쿼리)
  
+### 연관 관계 매핑하기
+- 관계수(Cardinality): 두 엔티티 간의 대응되는 행의 개수
+- 관계수의 갯수: 1:1, 1:N, N:1, N:M
+- 관계형모델: 양방향, 객체 모델: 단방향
+- 양방향 1=1
+  - nullable = false , inner join / true의 경우 left outer join (null값 포함) 
+  - foriegnKey를 굳이 두번 만들 필요가 없을때, mappedBy 구분 사용(FK가 안만들어짐)
+- 
