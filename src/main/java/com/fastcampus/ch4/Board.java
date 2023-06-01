@@ -20,6 +20,11 @@ public class Board {
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date upDate;
 
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable = false)
+    private User user;
+
+
     public Long getBno() {
         return bno;
     }
@@ -76,6 +81,14 @@ public class Board {
         this.upDate = upDate;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Board{" +
@@ -86,6 +99,7 @@ public class Board {
                 ", viewCnt=" + viewCnt +
                 ", inDate=" + inDate +
                 ", upDate=" + upDate +
+//                ", user=" + user +
                 '}';
     }
 }

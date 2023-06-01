@@ -1,16 +1,30 @@
 package com.fastcampus.ch4;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
     @Id
+    @Column(name="user_id")
     private String id;
     private String password;
     private String name;
     private String email;
+
+    @OneToMany(mappedBy = "user",fetch= FetchType.LAZY) //User 하나에 여러 board
+    List<Board> list = new ArrayList<>();
+
+    public List<Board> getList() {
+        return list;
+    }
+
+    public void setList(List<Board> list) {
+        this.list = list;
+    }
+
     private Date inDate;
     private Date upDate;
 
@@ -69,6 +83,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", list=" + list +
                 ", inDate=" + inDate +
                 ", upDate=" + upDate +
                 '}';

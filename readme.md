@@ -40,4 +40,5 @@
 - 양방향 1=1
   - nullable = false , inner join / true의 경우 left outer join (null값 포함) 
   - foriegnKey를 굳이 두번 만들 필요가 없을때, mappedBy 구분 사용(FK가 안만들어짐)
-- 
+- @OneToMany, @ManyToOne과 @JoinColumn을 각각 적용
+- FetchType.EAGER는 join으로 한번에 조회, Lazy는 get 함수를 호출할때 따로 조회
